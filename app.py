@@ -57,7 +57,7 @@ def home():
                     messages=[
                         {
                             "role": "user",
-                            "content": f"Simplify and summarize the following text in plain, easy to understand language:\n\n{content}"
+                            "content": f"Simplify and summarize the following text in plain, easy to understand language. If the text contains important dates, a timeline of events, or key facts that are essential to understanding it, include those clearly (for example, as a short list or timeline) — but only if the content actually calls for it. Don't force structure onto text that doesn't need it.\n\n{content}"
                         }
                     ]
                 )
