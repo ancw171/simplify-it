@@ -58,8 +58,8 @@ def home():
                 prompt = f"""The following text was extracted from a document or PDF and may contain some garbled or disjointed fragments (for example, from charts, graphs, or tables). Ignore any fragments that don't form coherent sentences, and base your analysis only on the clear, readable prose.
 
 Analyze the following text for a student studying it. Respond ONLY with a valid JSON object, no other text before or after, with these exact keys:
-- "summary": a clear, simplified summary of the main content in plain language
-- "key_terms": an array of objects, each with "term" and "meaning" keys, covering the most important terms in the text (empty array if none apply)
+- "summary": a clear, simplified summary of the main content in plain language, base the length of the summary on the length of the original text, aim to reduce is to 20%-30% the size of the original text.
+- "key_terms": an array of objects, each with "term" and "meaning" keys, covering the most important terms in the text, base the amount of terms on the length of the text (longer text, more terms, only if applies) (empty array if none apply)
 - "timeline_type": either "timeline" if the text has a clear chronological sequence of events, or "context" if it does not
 - "timeline_items": an array of short strings. If timeline_type is "timeline", each item should be a date/event. If timeline_type is "context", each item should be an important contextual point to know (3-5 items).
 
