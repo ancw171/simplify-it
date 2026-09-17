@@ -3,17 +3,17 @@
 <head>
     <title>Simplify It</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    <style>
+       <style>
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
             max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
-            background-color: #7d5938;
-            color: #ecddce;
+            background-color: #F2E8DC;
+            color: #4A342E;
         }
         h1 {
-            color: #FFEDD1;
+            color: #4A342E;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
             font-style: italic;
@@ -24,14 +24,15 @@
         }
         p.subtitle {
             text-align: center;
-            color: #d2b399;
+            color: #8B7355;
             margin-bottom: 30px;
         }
         form {
-            background-color: #906241;
+            background-color: #EADFCE;
             padding: 25px;
             border-radius: 20px;
             margin-bottom: 30px;
+            border: 1px solid #D9C7AC;
         }
         textarea {
             width: 100%;
@@ -41,36 +42,56 @@
             font-family: 'Times New Roman', serif;
             color: #000000;
             background-color: #FFFFFF;
-            border: none;
+            border: 1px solid #D9C7AC;
             border-radius: 15px;
             box-sizing: border-box;
             resize: vertical;
         }
         input[type="file"] {
             margin: 15px 0;
-            color: #ecddce;
+            color: #4A342E;
         }
         .checkboxes {
-            margin: 15px 0;
+            margin: 20px 0;
             display: flex;
-            gap: 25px;
+            gap: 30px;
             flex-wrap: wrap;
         }
         .checkboxes label {
-            color: #ecddce;
+            color: #4A342E;
             font-size: 15px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 10px;
             cursor: pointer;
+            user-select: none;
         }
         .checkboxes input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #C97B4A;
+            border-radius: 6px;
+            background-color: #FFFFFF;
             cursor: pointer;
+            position: relative;
+            transition: background-color 0.2s ease;
+        }
+        .checkboxes input[type="checkbox"]:checked {
+            background-color: #C97B4A;
+        }
+        .checkboxes input[type="checkbox"]:checked::after {
+            content: "✓";
+            color: #FFFFFF;
+            position: absolute;
+            top: -3px;
+            left: 3px;
+            font-size: 14px;
+            font-weight: bold;
         }
         button {
-            background-color: #d2b399;
+            background-color: #C97B4A;
             color: #FFFFFF;
             padding: 12px 28px;
             border: none;
@@ -80,28 +101,30 @@
             cursor: pointer;
             display: block;
             margin: 10px auto 0;
+            transition: background-color 0.2s ease;
         }
         button:hover {
-            background-color: #c29574;
+            background-color: #B36A3C;
         }
         .summary-box {
-            background-color: #FFFFFF;
+            background-color: #FAF5EE;
             padding: 30px;
             border-radius: 20px;
             margin-top: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 8px rgba(74,52,46,0.15);
+            border: 1px solid #E5D8C3;
         }
         .summary-box h2 {
             margin-top: 0;
-            color: #7d5938;
+            color: #4A342E;
             font-weight: normal;
             font-size: 22px;
-            border-bottom: 1px solid #d2b399;
+            border-bottom: 1px solid #D9C7AC;
             padding-bottom: 10px;
         }
         .summary-text {
             white-space: pre-wrap;
-            color: #000000;
+            color: #3A2C26;
             line-height: 1.7;
             font-size: 16px;
         }
@@ -112,27 +135,28 @@
             margin-top: 20px;
         }
         .box {
-            background-color: #FFFFFF;
+            background-color: #FAF5EE;
             padding: 20px;
             border-radius: 20px;
             flex: 1;
             min-width: 280px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 8px rgba(74,52,46,0.15);
+            border: 1px solid #E5D8C3;
         }
         .box h2 {
             margin-top: 0;
-            color: #7d5938;
+            color: #4A342E;
             font-weight: normal;
             font-size: 19px;
-            border-bottom: 1px solid #d2b399;
+            border-bottom: 1px solid #D9C7AC;
             padding-bottom: 10px;
         }
         .term {
             margin-bottom: 12px;
-            color: #000000;
+            color: #3A2C26;
         }
         .term strong {
-            color: #7d5938;
+            color: #C97B4A;
         }
         ul {
             padding-left: 20px;
@@ -140,10 +164,10 @@
         }
         li {
             margin-bottom: 8px;
-            color: #000000;
+            color: #3A2C26;
         }
         .error {
-            color: #FFEDD1;
+            color: #B3452F;
             text-align: center;
             margin-top: 15px;
         }
